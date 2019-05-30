@@ -50,7 +50,7 @@ client.on('message', msg => {
 
     if(command === "ads") {
         if(!msg.member.permissions.has('ADMINISTRATOR')) return msg.reply(no_acces);
-        let message_channel = = msg.mentions.channels.first();
+        let message_channel = msg.mentions.channels.first();
         msg.delete();
         if(message_channel) {
             let embed = new Discord.RichEmbed()
