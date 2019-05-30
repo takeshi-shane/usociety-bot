@@ -9,6 +9,9 @@ const server_status = {
     bot_count_ID: '570627933337681939'
 }
 
+let cooldown = new Set();
+let cdseconds = 180;
+
 client.on('ready', () => {
     console.log('I am online!');
 })
@@ -49,6 +52,17 @@ client.on('guildMemberRemove', member => {
 })
 
 client.on('message', msg => {
+    if(msg.content === "sal") {
+        if(cooldown.has(msg.author.id)) return;
+        msg.channel.send('Salutare!');
+        
+        cooldown.add(msg.author.id);   
+
+        setTimeout(() => {
+            cooldown.delete(msg.author.id)  
+        }, cdseconds * 1000)
+    }
+    
     if(msg.content.indexOf(config.prefix) !== 0) return;
     const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase()
