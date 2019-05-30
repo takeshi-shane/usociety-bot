@@ -40,9 +40,12 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
     //server status
-    client.channels.get(server_status.total_users_ID).setName(`total members: ${member.guild.memberCount}`);
-    client.channels.get(server_status.member_count_ID).setName(`human count: ${member.guild.members.filter(m => !m.user.bot).size}`);
-    client.channels.get(server_status.bot_count_ID).setName(`bot count: ${member.guild.members.filter(m => m.user.bot).size}`);
+    let users_channel = client.channels.get(server_status.total_users_ID)
+    users_channel.setName(`total members: ${member.guild.memberCount}`);
+    let human_channel = client.channels.get(server_status.member_count_ID)
+    human_channel.setName(`human count: ${member.guild.members.filter(m => !m.user.bot).size}`);
+    let bot_channel = client.channels.get(server_status.bot_count_ID)
+    bot_channel.setName(`bot count: ${member.guild.members.filter(m => m.user.bot).size}`);
 })
 
 client.on('message', msg => {
