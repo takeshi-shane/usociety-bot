@@ -62,6 +62,26 @@ client.on('message', msg => {
             cooldown.delete(msg.author.id)  
         }, cdseconds * 1000)
     }
+    else if(msg.content === "salut") {
+        if(cooldown.has(msg.author.id)) return;
+        msg.channel.send('Salutare!');
+        
+        cooldown.add(msg.author.id);   
+
+        setTimeout(() => {
+            cooldown.delete(msg.author.id)  
+        }, cdseconds * 1000)
+    }
+    if(msg.content === "noroc") {
+        if(cooldown.has(msg.author.id)) return;
+        msg.channel.send('Noroc!');
+        
+        cooldown.add(msg.author.id);   
+
+        setTimeout(() => {
+            cooldown.delete(msg.author.id)  
+        }, cdseconds * 1000)
+    }
     
     if(msg.content.indexOf(config.prefix) !== 0) return;
     const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
