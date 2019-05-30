@@ -57,7 +57,7 @@ client.on('message', msg => {
         .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/zYPquPB')
         .setColor('#3388d2')
         msg.delete();
-        msg.Channel.send(embed);
+        msg.channel.send(embed);
     }
     else if(command === "clear") {
         if(msg.member.hasPermission("MANAGE_MESSAGES")) {
