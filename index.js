@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = 'NDg4NzYzOTg2MTA0NDE4MzA5.XO6zPA.eszwiK2XOhPdBfJgVQf0gbucF3Q';
 const config = require("./config.json");
 const no_acces = "nu ai acces la aceasta comanda!";
 
@@ -71,4 +70,4 @@ client.on('message', msg => {
     }
 })
 
-client.login(token);
+client.login(process.env.TOKEN);
