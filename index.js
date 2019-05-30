@@ -50,16 +50,25 @@ client.on('message', msg => {
 
     if(command === "ads") {
         if(!msg.member.permissions.has('ADMINISTRATOR')) return msg.reply(no_acces);
-        let msgChannel = msg.guild.channels.find(channel => channel.name === "general");
-        if(!msgChannel) return msg.reply("nu pot gasit canalul 'general'.");
-        let embed = new Discord.RichEmbed()
-        .setAuthor('Announcements:')
-        .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/zYPquPB')
-        .setColor('#3388d2')
+        let message_channel = = msg.mentions.channels.first();
         msg.delete();
-        msg.channel.send(embed);
+        if(message_channel) {
+            let embed = new Discord.RichEmbed()
+            .setAuthor('Announcements:')
+            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/zYPquPB')
+            .setColor('#3388d2')
+            msg.delete();
+            message_channel.send(embed);
+        } else {
+            let embed = new Discord.RichEmbed()
+            .setAuthor('Announcements:')
+            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/zYPquPB')
+            .setColor('#3388d2')
+            msg.delete();
+            msg.channel.send(embed);
+        }
     }
-    else if(command === "clear") {
+    else if(command === "cc") {
         if(msg.member.hasPermission("MANAGE_MESSAGES")) {
             msg.channel.fetchMessages()
                .then(function(list) {
