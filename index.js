@@ -18,8 +18,7 @@ client.on('guildMemberAdd', member => {
     var joinRole = member.guild.roles.find(role => role.name === "Member");
     member.addRole(joinRole);
 
-    let joinChannel = member.guild.channels.find(channel => channel.name === "general");
-    joinChannel.send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
+    member.guild.channels.find(channel => channel.name === "general").send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
 
     const embed = new Discord.RichEmbed()
         .setAuthor(`Bine ai venit pe serverul San Andreas Universe, ${member.displayName}!`)
