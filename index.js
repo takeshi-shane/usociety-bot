@@ -15,8 +15,8 @@ client.on('ready', () => {
 })
 
 client.on('guildMemberAdd', member => {
-    var joinRole = member.guild.roles.find(role => role.name === "Member");
-    member.addRole(joinRole);
+    var join_role = member.guild.roles.find('name', 'Member')
+    member.addRole(join_role);
     let join_channel = client.channels.get('583351527008370717')
     join_channel.send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
 
