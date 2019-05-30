@@ -4,9 +4,9 @@ const client = new Discord.Client();
 const config = require("./config.json");
 
 const server_status = {
-    total_users_ID: '583548684067930143',
-    member_count_ID: '583548684134776862',
-    bot_count_ID: '583548828393799705'
+    total_users_ID: '487210345702621184',
+    member_count_ID: '487210346424172544',
+    bot_count_ID: '570627933337681939'
 }
 
 client.on('ready', () => {
@@ -17,7 +17,7 @@ client.on('guildMemberAdd', member => {
     //var join_role = member.guild.find(role => role.name == 'Member');
     //member.addRole(join_role);
     
-    let join_channel = client.channels.get('583351527008370717')
+    let join_channel = client.channels.get('576392140389744653')
     join_channel.send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
 
     const embed = new Discord.RichEmbed()
