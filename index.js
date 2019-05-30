@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const config = require("./config.json");
-const no_acces = "nu ai acces la aceasta comanda!";
 
 const server_status = {
     total_users_ID: '583548684067930143',
@@ -55,7 +54,7 @@ client.on('message', msg => {
     const command = args.shift().toLowerCase()
 
     if(command === "ads") {
-        if(!msg.member.permissions.has('ADMINISTRATOR')) return msg.reply(no_acces);
+        if(!msg.member.permissions.has('ADMINISTRATOR')) return msg.reply("nu ai acces la aceasta comanda!");
         let message_channel = msg.mentions.channels.first();
         if(message_channel) {
             let embed = new Discord.RichEmbed()
@@ -80,7 +79,7 @@ client.on('message', msg => {
                     msg.channel.bulkDelete(list);
                     msg.reply("chat cleared!");
             }, function(err){msg.channel.send("Eroare: Nu pot sterge mesajele acestui canal.")})                        
-        }
+        } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
 })
 
