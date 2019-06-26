@@ -13,13 +13,10 @@ let cooldown = new Set();
 let cdseconds = 180;
 
 client.on('ready', () => {
-    console.log('I am online!');
+    console.log('I am online now!');
 })
 
 client.on('guildMemberAdd', member => {
-    //var join_role = member.guild.find(role => role.name == 'Member');
-    //member.addRole(join_role);
-    
     let join_channel = client.channels.get('576392140389744653')
     join_channel.send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
 
