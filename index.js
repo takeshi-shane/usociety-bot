@@ -49,7 +49,7 @@ client.on('guildMemberRemove', member => {
 })
 
 client.on('message', msg => {
-    if(msg.content === "sal") {
+    if(msg.content === "Salut") {
         if(cooldown.has(msg.author.id)) return;
         msg.channel.send('Salutare!');
         
@@ -59,27 +59,7 @@ client.on('message', msg => {
             cooldown.delete(msg.author.id)  
         }, cdseconds * 1000)
     }
-    else if(msg.content === "salut") {
-        if(cooldown.has(msg.author.id)) return;
-        msg.channel.send('Salutare!');
-        
-        cooldown.add(msg.author.id);   
-
-        setTimeout(() => {
-            cooldown.delete(msg.author.id)  
-        }, cdseconds * 1000)
-    }
-    if(msg.content === "noroc") {
-        if(cooldown.has(msg.author.id)) return;
-        msg.channel.send('Noroc!');
-        
-        cooldown.add(msg.author.id);   
-
-        setTimeout(() => {
-            cooldown.delete(msg.author.id)  
-        }, cdseconds * 1000)
-    }
-    
+  
     if(msg.content.indexOf(config.prefix) !== 0) return;
     const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase()
