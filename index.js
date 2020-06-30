@@ -21,7 +21,7 @@ client.on('guildMemberAdd', member => {
     join_channel.send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
 
     const embed = new Discord.RichEmbed()
-        .setAuthor(`Bine ai venit pe serverul San Andreas Universe, ${member.displayName}!`)
+        .setAuthor(`Bine ai venit in clubul The Fusion, ${member.displayName}!`)
         .setDescription('**Iti uram sedere placuta alaturi de noi.\nDaca ai intrebari, ni le poti adresa pe chatul <#general>.\n\nO zi/seara/dimineata placuta :wink:!**')
         .setThumbnail('https://cdn.discordapp.com/icons/285793218023653376/7301f7da88defd2d47f18879fd3b8577.jpg')
         .setColor('#3388d2')
