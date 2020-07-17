@@ -70,14 +70,14 @@ client.on('message', msg => {
         if(message_channel) {
             let embed = new Discord.RichEmbed()
             .setAuthor('Announcements:')
-            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/zYPquPB')
+            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/DsWCJDa')
             .setColor('#3388d2')
             msg.delete();
             message_channel.send(embed);
         } else {
             let embed = new Discord.RichEmbed()
             .setAuthor('Announcements:')
-            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/zYPquPB')
+            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/DsWCJDa')
             .setColor('#3388d2')
             msg.delete();
             msg.channel.send(embed);
