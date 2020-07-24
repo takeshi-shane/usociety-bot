@@ -12,8 +12,6 @@ const server_status = {
 
 let cooldown = new Set();
 let cdseconds = 180;
-let SAMP_IP = "193.203.39.36";
-let SAMP_PORT = 7777;
 
 client.on('ready', () => {
     console.log('I am online now!');
@@ -50,54 +48,6 @@ client.on('guildMemberRemove', member => {
     let bot_channel = client.channels.get(server_status.bot_count_ID)
     bot_channel.setName(`bot count: ${member.guild.members.filter(m => m.user.bot).size}`);
 })
-
-function GetPlayersOnline(msg) 
-{
-	var options = {
-		host: SAMP_IP,
-		port: SAMP_PORT
-	}
-	//console.log(options.host)
-	query(options, function (error, response) {
-		if(error)
-		{
-			console.log(error)
-			const embedColor = 0xff0000;
-			
-			const logMessage = {
-				embed: {
-					title: 'I wasent expecting that , Please try again later',
-					color: embedColor,
-					fields: [
-						{ name: 'Error:', value: error, inline: true },
-					],
-				}
-			}
-			msg.channel.send(logMessage)
-			
-		}    
-		else
-		{   
-			var str = "Server Info";
-			var value = str.concat(' IP: ',response['address'],' Players Online: ',response['online'],'/50'); 
-			const embedColor = 0x00ff00;
-
-			const logMessage = {
-				embed: {
-					title: 'Server Information',
-					color: embedColor,
-					fields: [
-						{ name: 'Server IP', value: response['address'], inline: true },
-						{ name: 'Players Online', value: response['online'], inline: true },
-						{ name: 'Max Players', value: '100', inline: true },
-					],
-				}
-			}
-			msg.channel.send(logMessage)
-		}    
-	})
-
-}
 
 client.on('message', msg => {
     if(msg.content === "Salut") {
@@ -144,7 +94,15 @@ client.on('message', msg => {
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
     else if(command === "status") {
-        GetPlayersOnline(msg);
+        var options = {
+	    host: '193.203.39.214'
+	}
+	query(options, function (error, response) {
+	    if(error)
+		console.log(error)
+	    else 
+		console.log(response)
+	})
     }
 })
 
