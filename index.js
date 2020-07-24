@@ -122,7 +122,7 @@ client.on('message', msg => {
 	query(options, function (error, response) {
 	    if(error) console.log(error);
 	    else {
-		msg.channel.send("Players: ", response['online']);
+		msg.channel.send('Players: ', response['online']);
 	    }
 	}
     }
