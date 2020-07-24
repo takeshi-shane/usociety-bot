@@ -106,7 +106,7 @@ client.on('message', msg => {
 				title: 'Server Information',
 				color: embedColor,
 				fields: [
-					{ name: 'Players', value: response['online'] },
+					{ name: 'Players:', value: response['online'], inline: true },
 				],
 			}
 		}
@@ -114,6 +114,17 @@ client.on('message', msg => {
 		console.log(response)
 	    }
 	})
+    }
+    else if(command === "status2") {
+    	var options = {
+	    host: '193.203.39.214'
+	}
+	query(options, function (error, response) {
+	    if(error) console.log(error);
+	    else {
+		msg.channel.send(`Players: ${response['online']}`);
+	    }
+	}
     }
 })
 
