@@ -97,6 +97,9 @@ client.on('message', msg => {
     	GetServerPlayers(msg, "193.203.39.228", 'Crowland');
     	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
 	GetServerPlayers(msg, "193.203.39.36", 'Nephrite');
+    	GetServerPlayers(msg, "193.203.39.49", 'OG-Times');
+    	GetServerPlayers(msg, "193.203.39.13", 'B-Zone (RPG1)');
+	GetServerPlayers(msg, "193.203.39.46", 'B-Hood');
     }
 })
 
