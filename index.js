@@ -100,7 +100,7 @@ client.on('message', msg => {
 	query(options, function (error, response) {
 	    if(error) console.log(error);
 	    else {
-		msg.channel.send(' Players Online: ',response['online'],'/777');
+		msg.channel.send('Players Online: 'response['online']'/777');
 		console.log(response);
 	    }
 	})
