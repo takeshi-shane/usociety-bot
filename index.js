@@ -94,18 +94,18 @@ client.on('message', msg => {
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
     else if(command === "status") {
-    	GetServerPlayers(msg, "193.203.39.214");
+    	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
     }
 })
 
-function GetServerPlayers(msg, ip) {
+function GetServerPlayers(msg, ip, sv_name) {
 	var options = {
 	    host: ip
 	}
 	query(options, function (error, response) {
 	    if(error) console.log(error);
 	    else {
-		msg.channel.send(`Players: ${response['online']}`);
+		msg.channel.send(`${sv_name}: ${response['online']}`);
 	    }
 	})
 }
