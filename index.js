@@ -94,7 +94,7 @@ client.on('message', msg => {
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
     else if(command === "status") {
-    	GetServerPlayers(msg, "rpg.redtimes.eu", 'Redcacat');
+    	GetServerPlayers(msg, "rpg.crowland.ro", 'Crowland');
     	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
 	GetServerPlayers(msg, "193.203.39.36", 'Nephrite');
     }
@@ -103,8 +103,8 @@ client.on('message', msg => {
 function GetServerPlayers(msg, ip, sv_name) {
 	var options = { host: ip }
 	query(options, function (error, response) {
-	    if(error) console.log(error);
-	    else msg.channel.send(`${sv_name}: ${response['online']}`);
+	    if(error) msg.channel.send(`**${sv_name}**: Too many players or offline`);
+	    else msg.channel.send(`**${sv_name}**: ${response['online']}`);
 	})
 }
 
