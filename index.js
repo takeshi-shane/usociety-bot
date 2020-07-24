@@ -94,29 +94,7 @@ client.on('message', msg => {
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
     else if(command === "status") {
-        var options = {
-	    host: '193.203.39.214'
-	}
-	query(options, function (error, response) {
-	    if(error) console.log(error);
-	    else {
-	    	const embedColor = 0xAA35B2;
-		const logMessage = {
-			embed: {
-				title: 'Server Information',
-				color: embedColor,
-				fields: [
-					{ name: 'Players:', value: response['online'], inline: true },
-				],
-			}
-		}
-		msg.channel.send(logMessage)
-		console.log(response)
-	    }
-	})
-    }
-    else if(command === "status2") {
-    	GetServerPlayers(msg, '193.203.39.214');
+    	GetServerPlayers(msg, "193.203.39.214");
     }
 })
 
