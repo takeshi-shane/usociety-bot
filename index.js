@@ -94,8 +94,6 @@ function GetPlayersOnline(msg)
 				}
 			}
 			msg.channel.send(logMessage)
-			if(Bot_debug_mode)
-				console.log(value)
 		}    
 	})
 
