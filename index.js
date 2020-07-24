@@ -93,7 +93,7 @@ client.on('message', msg => {
             }, function(err){msg.channel.send("Eroare: Nu pot sterge mesajele acestui canal.")})                        
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
-    else if(command === "status") {
+    else if(command === "servers") {
     	GetServerPlayers(msg, "193.203.39.228", 'Crowland');
     	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
 	GetServerPlayers(msg, "193.203.39.36", 'Nephrite');
