@@ -98,7 +98,7 @@ client.on('message', msg => {
 	    host: '193.203.39.214'
 	}
 	query(options, function (error, response) {
-	    if(error) msg.reply("am intampinat o eroare! Serverul este offline sau nu exista.");
+	    if(error) console.log(error);
 	    else {
 		msg.channel.send(' Players Online: ',response['online'],'/777');
 		console.log(response);
