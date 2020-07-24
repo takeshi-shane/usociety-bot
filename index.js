@@ -100,8 +100,20 @@ client.on('message', msg => {
 	query(options, function (error, response) {
 	    if(error) console.log(error);
 	    else {
-		msg.channel.send('Players Online: 'response['online']'/777');
-		console.log(response);
+		const embedColor = 0x00ff00;
+		const logMessage = {
+			embed: {
+				title: 'Server Information',
+				color: embedColor,
+				fields: [
+					{ name: 'Server IP', value: response['address'], inline: true },
+					{ name: 'Players Online', value: response['online'], inline: true },
+					{ name: 'Max Players', value: '100', inline: true },
+				],
+			}
+		}
+		msg.channel.send(logMessage)
+		console.log(response)
 	    }
 	})
     }
