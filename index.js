@@ -100,7 +100,7 @@ client.on('message', msg => {
 	query(options, function (error, response) {
 	    if(error) msg.reply("am intampinat o eroare! Serverul este offline sau nu exista.");
 	    else {
-		msg.channel.send('Eclipsed: response['online']/response[maxplayers]')
+		msg.channel.send('Eclipsed: 'response['online']'/'response[maxplayers]'')
 		console.log(response)
 	    }
 	})
