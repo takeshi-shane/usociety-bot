@@ -116,7 +116,7 @@ client.on('message', msg => {
 	})
     }
     else if(command === "status2") {
-    	GetServerPlayers(msg, 193.203.39.214);
+    	GetServerPlayers(msg, '193.203.39.214');
     }
 })
 
