@@ -102,7 +102,9 @@ client.on('message', msg => {
 	    else {
 		let embed = new Discord.RichEmbed()
 		.setAuthor('SAMP Raport:')
-		.setDescription('Players' response['online']'/100')
+		.addFields(
+    			{ name: 'Players', value: response['online']'/'response['maxplayers'], inline: true },
+		)
 		.setColor('#AA35B2')
 		msg.channel.send(embed);
 		console.log(response)
