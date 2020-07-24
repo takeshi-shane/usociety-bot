@@ -100,15 +100,13 @@ client.on('message', msg => {
 	query(options, function (error, response) {
 	    if(error) console.log(error);
 	    else {
-		const embedColor = 0x00ff00;
+		const embedColor = 0xAA35B2;
 		const logMessage = {
 			embed: {
-				title: 'Server Information',
+				title: 'SAMP Raport',
 				color: embedColor,
 				fields: [
-					{ name: 'Server IP', value: response['address'], inline: true },
-					{ name: 'Players Online', value: response['online'], inline: true },
-					{ name: 'Max Players', value: '100', inline: true },
+					{ name: 'Players:', value: response['online']'/'response['maxplayers'], inline: false },
 				],
 			}
 		}
