@@ -103,7 +103,7 @@ client.on('message', msg => {
 function GetServerPlayers(msg, ip, sv_name) {
 	var options = { host: ip }
 	query(options, function (error, response) {
-	    if(error) msg.channel.send(`${sv_name}: Offline`);
+	    if(error) console.log(error);
 	    else msg.channel.send(`${sv_name}: ${response['online']}`);
 	})
 }
