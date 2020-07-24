@@ -9,6 +9,7 @@
   "author": "shane",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.0"
+    "discord.js": "^11.5.0",
+    "samp-query": "0.1.4"
   }
 }
