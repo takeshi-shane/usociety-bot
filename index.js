@@ -116,8 +116,13 @@ client.on('message', msg => {
 	})
     }
     else if(command === "status2") {
-    	var options = {
-	    host: '193.203.39.214'
+    	GetServerPlayers(msg, 193.203.39.214);
+    }
+})
+
+function GetServerPlayers(msg, ip) {
+	var options = {
+	    host: ip
 	}
 	query(options, function (error, response) {
 	    if(error) console.log(error);
@@ -125,7 +130,6 @@ client.on('message', msg => {
 		msg.channel.send(`Players: ${response['online']}`);
 	    }
 	})
-    }
-})
+}
 
 client.login(process.env.TOKEN);
