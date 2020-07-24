@@ -100,17 +100,11 @@ client.on('message', msg => {
 	query(options, function (error, response) {
 	    if(error) console.log(error);
 	    else {
-		const embedColor = 0xAA35B2;
-		const logMessage = {
-			embed: {
-				title: 'SAMP Raport',
-				color: embedColor,
-				fields: [
-					{ name: 'Players:', value: response['online']'/'response['maxplayers'], inline: false },
-				],
-			}
-		}
-		msg.channel.send(logMessage)
+		let embed = new Discord.RichEmbed()
+		.setAuthor('SAMP Raport:')
+		.setDescription('Players' response['online']'/100')
+		.setColor('#AA35B2')
+		msg.channel.send(embed);
 		console.log(response)
 	    }
 	})
