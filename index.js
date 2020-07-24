@@ -95,18 +95,15 @@ client.on('message', msg => {
     }
     else if(command === "status") {
     	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
+	GetServerPlayers(msg, "ruby.nephrite.ro", 'Nephrite');
     }
 })
 
 function GetServerPlayers(msg, ip, sv_name) {
-	var options = {
-	    host: ip
-	}
+	var options = { host: ip }
 	query(options, function (error, response) {
-	    if(error) console.log(error);
-	    else {
-		msg.channel.send(`${sv_name}: ${response['online']}`);
-	    }
+	    if(error) msg.channel.send(`${sv_name}: Offline`);
+	    else msg.channel.send(`${sv_name}: ${response['online']}`);
 	})
 }
 
