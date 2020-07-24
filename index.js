@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const config = require("./config.json");
+var query = require('samp-query');
 
 const server_status = {
     total_users_ID: '487210345702621184',
@@ -11,6 +12,8 @@ const server_status = {
 
 let cooldown = new Set();
 let cdseconds = 180;
+let SAMP_IP = "51.178.138.254";
+let SAMP_PORT = 7777;
 
 client.on('ready', () => {
     console.log('I am online now!');
