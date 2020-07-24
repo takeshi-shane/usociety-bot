@@ -104,7 +104,7 @@ function GetServerPlayers(msg, ip, sv_name) {
 	var options = { host: ip }
 	query(options, function (error, response) {
 	    if(error) msg.channel.send(`**${sv_name}**: Too many players or offline`);
-	    else msg.channel.send(`**${sv_name}**: ${response['online']}`);
+	    else msg.channel.send(`**${sv_name}**: ${response['online']}/${response['maxplayers']}`);
 	})
 }
 
