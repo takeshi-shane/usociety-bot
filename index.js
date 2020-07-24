@@ -94,7 +94,7 @@ client.on('message', msg => {
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
     else if(command === "status") {
-    	GetServerPlayers(msg, "193.203.39.228", 'Crowland');
+    	GetServerPlayers(msg, "rpg.redtimes.eu", 'Redcacat');
     	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
 	GetServerPlayers(msg, "193.203.39.36", 'Nephrite');
     }
