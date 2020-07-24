@@ -96,6 +96,7 @@ client.on('message', msg => {
     else if(command === "status") {
     	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
 	GetServerPlayers(msg, "ruby.nephrite.ro", 'Nephrite');
+    	GetServerPlayers(msg, "rpg.crowland.ro", 'Crowland');
     }
 })
 
