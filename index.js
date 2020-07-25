@@ -95,20 +95,20 @@ client.on('message', msg => {
     }
     else if(command === "servers") {
     	if(!msg.member.permissions.has('MANAGE_MESSAGES')) return msg.reply("nu ai acces la aceasta comanda!");
-	GetServerPlayers(msg, "193.203.39.36", 'Nephrite');
+	GetServerPlayers(msg, "193.203.39.36", 'Nephrite')
     	.then((msg)=> {
 	  setTimeout(function(){
-	    GetServerPlayers(msg, "193.203.39.49", 'OG-Times');
+	    GetServerPlayers(msg, "193.203.39.49", 'OG-Times')
 	  }, 1000)
-	});
+	})
     	.then((msg)=> {
 	  setTimeout(function(){
-	    GetServerPlayers(msg, "193.203.39.13", 'B-Zone (RPG1)');
+	    GetServerPlayers(msg, "193.203.39.13", 'B-Zone (RPG1)')
 	  }, 2000)
-	});
+	})
     	.then((msg)=> {
 	  setTimeout(function(){
-	    GetServerPlayers(msg, "193.203.39.46", 'B-Hood');
+	    GetServerPlayers(msg, "193.203.39.46", 'B-Hood')
 	  }, 3000)
 	});
     }
