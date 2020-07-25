@@ -23,7 +23,7 @@ client.on('ready', () => {
     	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.49", 'OG-Times') }, 2000)
 	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.13", 'B-Zone (RPG1)') }, 3000)
 	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.46", 'B-Hood') }, 4000)    
-    }, 5000);
+    }, 20000);
 })
 
 client.on('guildMemberAdd', member => {
