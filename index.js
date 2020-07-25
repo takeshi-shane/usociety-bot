@@ -95,8 +95,6 @@ client.on('message', msg => {
     }
     else if(command === "servers") {
     	if(!msg.member.permissions.has('MANAGE_MESSAGES')) return msg.reply("nu ai acces la aceasta comanda!");
-    	GetServerPlayers(msg, "193.203.39.228", 'Crowland');
-    	GetServerPlayers(msg, "193.203.39.214", 'Eclipsed');
 	GetServerPlayers(msg, "193.203.39.36", 'Nephrite');
 	GetServerPlayers(msg, "193.203.39.49", 'OG-Times');
     	GetServerPlayers(msg, "193.203.39.13", 'B-Zone (RPG1)');
