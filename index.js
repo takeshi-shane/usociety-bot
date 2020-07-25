@@ -105,7 +105,7 @@ client.on('message', msg => {
 	}, 2000)
 	setTimeout(function() {
 		GetServerPlayers(msg, "193.203.39.46", 'B-Hood')
-	}, 2000)
+	}, 3000)
     }
 })
 
