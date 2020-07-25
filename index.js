@@ -15,6 +15,15 @@ let cdseconds = 180;
 
 client.on('ready', () => {
     console.log('I am online now!');
+	
+    var raportCNL = client.channels.find(channel => channel.id === '575652735190302730');
+    setInterval(() => {
+	raportCNL.send("---------------------");
+	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.36", 'Nephrite') }, 1000)
+    	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.49", 'OG-Times') }, 2000)
+	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.13", 'B-Zone (RPG1)') }, 3000)
+	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.46", 'B-Hood') }, 4000)    
+    }, 5000);
 })
 
 client.on('guildMemberAdd', member => {
