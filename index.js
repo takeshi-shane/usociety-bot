@@ -93,6 +93,25 @@ client.on('message', msg => {
             msg.channel.send(embed);
         }
     }
+    else if(command === "codes") {
+        if(!msg.member.permissions.has('ADMINISTRATOR')) return msg.reply("nu ai acces la aceasta comanda!");
+        let message_channel = msg.mentions.channels.first();
+        if(message_channel) {
+            let embed = new Discord.RichEmbed()
+            .setAuthor('Keys:')
+            .setDescription('World of Warships (Starter bonus, Rare) - (https://redir.wargaming.net/wj1tj3tb/) / (WK8D-2UFZR-U3P9E)\nWorld of Warships (Starter bonus, Epic) - (https://redir.wargaming.net/wj1tj3tb/) / (WK2B-D474A-WXB2N)')
+            .setColor('#AB51A1')
+            msg.delete();
+            message_channel.send(embed);
+        } else {
+            let embed = new Discord.RichEmbed()
+            .setAuthor('Announcements:')
+            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/DsWCJDa')
+            .setColor('#AB51A1')
+            msg.delete();
+            msg.channel.send(embed);
+        }
+    }
     else if(command === "cc") {
         if(msg.member.hasPermission("MANAGE_MESSAGES")) {
             msg.channel.fetchMessages()
