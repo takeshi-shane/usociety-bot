@@ -106,7 +106,7 @@ client.on('message', msg => {
         } else {
             let embed = new Discord.RichEmbed()
             .setAuthor('Announcements:')
-            .setDescription('Sustine serverul de discord cu o distribuire a urmatorului link:\nInvite: https://discord.gg/DsWCJDa')
+            .setDescription('World of Warships (Starter bonus, Rare) - (https://redir.wargaming.net/wj1tj3tb/) / (WK8D-2UFZR-U3P9E)\nWorld of Warships (Starter bonus, Epic) - (https://redir.wargaming.net/wj1tj3tb/) / (WK2B-D474A-WXB2N)')
             .setColor('#AB51A1')
             msg.delete();
             msg.channel.send(embed);
