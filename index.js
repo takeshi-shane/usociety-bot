@@ -4,11 +4,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 var query = require('samp-query');
 
-const server_status = {
-    total_users_ID: '487210345702621184',
-    member_count_ID: '487210346424172544',
-    bot_count_ID: '570627933337681939'
-}
+const server_status = { total_users_ID: '785514977133199360' }
 
 let cooldown = new Set();
 let cdseconds = 180;
@@ -16,46 +12,36 @@ let cdseconds = 180;
 client.on('ready', () => {
     console.log('I am online now!');
 	
-    var raportCNL = client.channels.find(channel => channel.id === '576392140389744653');
+    var raportCNL = client.channels.find(channel => channel.id === '784872604497608755');
     setInterval(() => {
 	raportCNL.send("---------------------");
-	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.36", 'Nephrite') }, 1500)
-    	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.49", 'OG-Times') }, 2000)
-	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.13", 'B-Zone (RPG1)') }, 3000)
-	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.46", 'B-Hood') }, 4000)    
+	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.77", 'U-SOCIETY') }, 1000)
+	raportCNL.send("---------------------");
     }, 86400000);
 })
 
 client.on('guildMemberAdd', member => {
-    let join_channel = client.channels.get('576392140389744653')
-    join_channel.send(`**[+]** Alo verutziii! ${member} s-a alaturat acestui grup!`);
+    let join_channel = client.channels.get('784872604497608755')
+    join_channel.send(`**[+]** ${member} s-a alaturat acestui grup!`);
 
     const embed = new Discord.RichEmbed()
-        .setAuthor(`Bine ai venit in clubul The Fusion, ${member.displayName}!`)
+        .setAuthor(`Bine ai venit pe U-SOCIETY, ${member.displayName}!`)
         .setDescription('**Iti uram sedere placuta alaturi de noi.\nDaca ai intrebari, ni le poti adresa pe chatul <#general>.\n\nO zi/seara/dimineata placuta :wink:!**')
-        .setThumbnail('https://cdn.discordapp.com/icons/285793218023653376/7301f7da88defd2d47f18879fd3b8577.jpg')
+        .setThumbnail('https://cdn.discordapp.com/app-icons/736176308119273503/4481c09d42f4ec582a6d646bdc4b1e1a.png')
         .setColor('#3388d2')
         .setTimestamp()
-        .setFooter('joined', 'https://cdn.discordapp.com/icons/285793218023653376/7301f7da88defd2d47f18879fd3b8577.jpg');
+        .setFooter('joined', 'https://cdn.discordapp.com/app-icons/736176308119273503/4481c09d42f4ec582a6d646bdc4b1e1a.png');
     member.user.send(embed);
 
     //server status
     let users_channel = client.channels.get(server_status.total_users_ID)
-    users_channel.setName(`total members: ${member.guild.memberCount}`);
-    let human_channel = client.channels.get(server_status.member_count_ID)
-    human_channel.setName(`human count: ${member.guild.members.filter(m => !m.user.bot).size}`);
-    let bot_channel = client.channels.get(server_status.bot_count_ID)
-    bot_channel.setName(`bot count: ${member.guild.members.filter(m => m.user.bot).size}`);
+    users_channel.setName(`members: ${member.guild.members.filter(m => !m.user.bot).size}`);
 })
 
 client.on('guildMemberRemove', member => {
     //server status
     let users_channel = client.channels.get(server_status.total_users_ID)
-    users_channel.setName(`total members: ${member.guild.memberCount}`);
-    let human_channel = client.channels.get(server_status.member_count_ID)
-    human_channel.setName(`human count: ${member.guild.members.filter(m => !m.user.bot).size}`);
-    let bot_channel = client.channels.get(server_status.bot_count_ID)
-    bot_channel.setName(`bot count: ${member.guild.members.filter(m => m.user.bot).size}`);
+    users_channel.setName(`members: ${member.guild.members.filter(m => !m.user.bot).size}`);
 })
 
 client.on('message', msg => {
@@ -102,12 +88,11 @@ client.on('message', msg => {
             }, function(err){msg.channel.send("Eroare: Nu pot sterge mesajele acestui canal.")})                        
         } else { msg.reply("nu ai acces la aceasta comanda!"); }
     }
-    else if(command === "servers") {
+    else if(command === "sstats") {
     	if(!msg.member.permissions.has('MANAGE_MESSAGES')) return msg.reply("nu ai acces la aceasta comanda!");
-	setTimeout(function() { GetServerPlayers(msg, "193.203.39.36", 'Nephrite') }, 1000)
-    	setTimeout(function() { GetServerPlayers(msg, "193.203.39.49", 'OG-Times') }, 2000)
-	setTimeout(function() { GetServerPlayers(msg, "193.203.39.13", 'B-Zone (RPG1)') }, 3000)
-	setTimeout(function() { GetServerPlayers(msg, "193.203.39.46", 'B-Hood') }, 4000)
+	raportCNL.send("---------------------");
+	setTimeout(function() { GetServerPlayers(raportCNL, "193.203.39.77", 'U-SOCIETY') }, 1000)
+	raportCNL.send("---------------------");
     }
 })
 
